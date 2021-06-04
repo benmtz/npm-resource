@@ -1,0 +1,15 @@
+{
+  "name": "@acme/core",
+  "version": "0.0.0",
+  "description": "## What's up",
+  "main": "index.js",
+  "scripts": {
+    "build": "ls -l && rm -fr dist && mkdir -p dist && cp package.json dist && cp avatar.png dist && cp README.md dist",
+    "bump": "npm version patch --no-git-tag-version && npm pack",
+    "bump:publish:latest": "npm version patch --no-git-tag-version && npm publish",
+    "bump:publish:next": "npm version patch --no-git-tag-version && npm publish --tag next"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

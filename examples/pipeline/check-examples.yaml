@@ -1,0 +1,54 @@
+jobs:
+  - name: trace-new-version
+    public: true
+    serial: true
+    plan:
+      - get: npm-library-latest
+      - get: npm-library-next
+      - get: npm-library-semver
+      - task: log-content
+        config:
+          platform: linux
+          image_resource:
+            type: registry-image
+            source: { repository: node, tag: 15.10-alpine }
+          inputs: [{ name: npm-library-latest }]
+          run:
+            path: sh
+            args:
+              - -exc
+              - |
+                ls npm-library-latest
+
+resource_types:
+  - name: npm-resource
+    type: registry-image
+    source:
+      repository: ((npm_resource.image))
+      tag: ((npm_resource.version))
+
+resources:
+  - name: npm-library-latest
+    check_every: 1h
+    type: npm-resource
+    source:
+      registry: ((npm.registry)) # Default to https://registry.npmjs.org/
+      package_name: ((app.lib_name)) #
+      token: ((npm.token)) # Get it from your .npmrc after login
+      tag: latest # Default to latest
+  - name: npm-library-next
+    check_every: 1h
+    type: npm-resource
+    source:
+      registry: ((npm.registry)) # Default to https://registry.npmjs.org/
+      package_name: ((app.lib_name)) #
+      token: ((npm.token)) # Get it from your .npmrc after login
+      tag: next # Default to latest
+  - name: npm-library-semver
+    check_every: 1h
+    type: npm-resource
+    source:
+      registry: ((npm.registry)) # Default to https://registry.npmjs.org/
+      package_name: ((app.lib_name)) #
+      token: ((npm.token)) # Get it from your .npmrc after login
+      tag: semver # Default to latest

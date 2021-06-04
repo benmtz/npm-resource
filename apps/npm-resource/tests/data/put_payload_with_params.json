@@ -1,0 +1,13 @@
+{
+  "source": {
+    "registry": "http://my-own-registry",
+    "package_name": "my-package-name",
+    "token": "my-token",
+    "tag": "my-tag"
+  },
+  "params": {
+    "package": "/override/this/path",
+    "version": "/override/this/path",
+    "package_name": "new-package-name"
+  }
+}

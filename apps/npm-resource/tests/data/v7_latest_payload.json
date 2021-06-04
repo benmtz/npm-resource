@@ -1,0 +1,11 @@
+{
+  "source": {
+    "registry": "http://my-own-registry",
+    "package_name": "my-package-name",
+    "token": "my-token",
+    "tag": "latest"
+  },
+  "version": {
+    "version": "0.0.7"
+  }
+}

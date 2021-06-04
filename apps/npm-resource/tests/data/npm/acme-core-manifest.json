@@ -1,0 +1,250 @@
+{
+  "name": "@acme/core",
+  "versions": {
+    "0.0.0": {
+      "scripts": {
+        "build": "ls -l && rm -fr dist && mkdir -p dist && cp package.json dist && cp avatar.png dist && cp README.md dist",
+        "bump": "npm version patch --no-git-tag-version && npm pack",
+        "bump:publish:latest": "npm version patch --no-git-tag-version && npm publish",
+        "bump:publish:next": "npm version patch --no-git-tag-version && npm publish --tag next"
+      },
+      "license": "ISC",
+      "author": "",
+      "readmeFilename": "README.md",
+      "dist": {
+        "integrity": "sha512-/XE1iWYx5/+1pnW28Y2KXv03Efv+zhA2A6/PVCb483gLEFiKvd8CO5PBMy9eFFpolQY0Fjc6Yq+cZYiVLGip2w==",
+        "shasum": "a0f68dd9ad64c5c377768df99043f3c8525b2246",
+        "tarball": "http://my-private-registry:10000/@acme%2fcore/-/package-0.0.0-next.tgz"
+      },
+      "description": "## What's up",
+      "keywords": [],
+      "_id": "@acme/core@0.0.0",
+      "_nodeVersion": "15.8.0",
+      "name": "@acme/core",
+      "_from": "file:package-0.0.0-next.tgz",
+      "_resolved": "",
+      "main": "index.js",
+      "_npmVersion": "6.14.11",
+      "version": "0.0.0",
+      "_integrity": "",
+      "contributors": []
+    },
+    "0.0.1": {
+      "_resolved": "",
+      "_from": "file:package-0.0.1-next.tgz",
+      "name": "@acme/core",
+      "description": "## What's up",
+      "version": "0.0.1",
+      "scripts": {
+        "build": "ls -l && rm -fr dist && mkdir -p dist && cp package.json dist && cp avatar.png dist && cp README.md dist",
+        "bump": "npm version patch --no-git-tag-version && npm pack",
+        "bump:publish:latest": "npm version patch --no-git-tag-version && npm publish",
+        "bump:publish:next": "npm version patch --no-git-tag-version && npm publish --tag next"
+      },
+      "license": "ISC",
+      "_npmVersion": "6.14.11",
+      "keywords": [],
+      "_id": "@acme/core@0.0.1",
+      "_integrity": "",
+      "readmeFilename": "README.md",
+      "author": "",
+      "_nodeVersion": "15.8.0",
+      "main": "index.js",
+      "dist": {
+        "integrity": "sha512-QehwhcOQbedIQUkPbeuc9/R+/ZhVsI5lryiFgDYwnqZnGpHlhkDMUbLyXVEwYxU8E6TtlUojqE7MbuF3zBqtrQ==",
+        "shasum": "0d2e54989b0abfc1e24aefc961f81dcaa59f7191",
+        "tarball": "http://my-private-registry:10000/@acme%2fcore/-/package-0.0.1-next.tgz"
+      },
+      "contributors": []
+    },
+    "0.0.2": {
+      "_resolved": "",
+      "name": "@acme/core",
+      "scripts": {
+        "build": "ls -l && rm -fr dist && mkdir -p dist && cp package.json dist && cp avatar.png dist && cp README.md dist",
+        "bump": "npm version patch --no-git-tag-version && npm pack",
+        "bump:publish:latest": "npm version patch --no-git-tag-version && npm publish",
+        "bump:publish:next": "npm version patch --no-git-tag-version && npm publish --tag next"
+      },
+      "_id": "@acme/core@0.0.2",
+      "_npmVersion": "6.14.11",
+      "readmeFilename": "README.md",
+      "dist": {
+        "integrity": "sha512-wLPhCsZLNWIxWm4YaJMluvH7H53ELolKB6+Dawg0QxFV8QSVJlhFq9S8vE77ZxyvhUX/5u3XlUPiyanUrqtfpw==",
+        "shasum": "497faea4f0da8f848917a134b65d36294a6dac3a",
+        "tarball": "http://my-private-registry:10000/@acme%2fcore/-/package-0.0.2-next.tgz"
+      },
+      "keywords": [],
+      "description": "## What's up",
+      "_from": "file:package-0.0.2-next.tgz",
+      "version": "0.0.2",
+      "main": "index.js",
+      "license": "ISC",
+      "_integrity": "",
+      "_nodeVersion": "15.8.0",
+      "author": "",
+      "contributors": []
+    },
+    "0.0.3": {
+      "_integrity": "",
+      "readmeFilename": "README.md",
+      "dist": {
+        "integrity": "sha512-IgdZiASIDVU+V48pCL9fRJAVq8TSz54Dw+9o5tmET+AUUIszKqnW5w/DAugyWeUAUvrNQOfLxKkfzPqThmEjlA==",
+        "shasum": "2073beedf180cdc0076d965c6d76570109ab9473",
+        "tarball": "http://my-private-registry:10000/@acme%2fcore/-/package-0.0.3-next.tgz"
+      },
+      "description": "## What's up",
+      "scripts": {
+        "build": "ls -l && rm -fr dist && mkdir -p dist && cp package.json dist && cp avatar.png dist && cp README.md dist",
+        "bump": "npm version patch --no-git-tag-version && npm pack",
+        "bump:publish:latest": "npm version patch --no-git-tag-version && npm publish",
+        "bump:publish:next": "npm version patch --no-git-tag-version && npm publish --tag next"
+      },
+      "version": "0.0.3",
+      "name": "@acme/core",
+      "_npmVersion": "6.14.11",
+      "_nodeVersion": "15.8.0",
+      "license": "ISC",
+      "_id": "@acme/core@0.0.3",
+      "keywords": [],
+      "_from": "file:package-0.0.3-next.tgz",
+      "author": "",
+      "main": "index.js",
+      "_resolved": "",
+      "contributors": []
+    },
+    "0.0.4": {
+      "description": "## What's up",
+      "version": "0.0.4",
+      "name": "@acme/core",
+      "dist": {
+        "integrity": "sha512-iJ7eZtZMuCGwT8qqXTAbZg8cX7A4bpqVZk+nckoIEXqsdXr0OAjztaiL89Hap5MEaYzGIxtQt1A5M6V21/5TsA==",
+        "shasum": "1401bd397a8163c18dd90a5df73a2d5447daaafe",
+        "tarball": "http://my-private-registry:10000/@acme%2fcore/-/package-0.0.4-next.tgz"
+      },
+      "author": "",
+      "main": "index.js",
+      "scripts": {
+        "build": "ls -l && rm -fr dist && mkdir -p dist && cp package.json dist && cp avatar.png dist && cp README.md dist",
+        "bump": "npm version patch --no-git-tag-version && npm pack",
+        "bump:publish:latest": "npm version patch --no-git-tag-version && npm publish",
+        "bump:publish:next": "npm version patch --no-git-tag-version && npm publish --tag next"
+      },
+      "_npmVersion": "6.14.11",
+      "_id": "@acme/core@0.0.4",
+      "readmeFilename": "README.md",
+      "keywords": [],
+      "_resolved": "",
+      "_from": "file:package-0.0.4-next.tgz",
+      "_integrity": "",
+      "_nodeVersion": "15.8.0",
+      "license": "ISC",
+      "contributors": []
+    },
+    "0.0.5": {
+      "_from": "file:package-0.0.5-next.tgz",
+      "_nodeVersion": "15.8.0",
+      "version": "0.0.5",
+      "_npmVersion": "6.14.11",
+      "main": "index.js",
+      "_resolved": "",
+      "_id": "@acme/core@0.0.5",
+      "keywords": [],
+      "license": "ISC",
+      "name": "@acme/core",
+      "_integrity": "",
+      "readmeFilename": "README.md",
+      "description": "## What's up",
+      "author": "",
+      "scripts": {
+        "build": "ls -l && rm -fr dist && mkdir -p dist && cp package.json dist && cp avatar.png dist && cp README.md dist",
+        "bump": "npm version patch --no-git-tag-version && npm pack",
+        "bump:publish:latest": "npm version patch --no-git-tag-version && npm publish",
+        "bump:publish:next": "npm version patch --no-git-tag-version && npm publish --tag next"
+      },
+      "dist": {
+        "integrity": "sha512-aEZ4dyqLZDLebyZ6N4Ni1mbj++vua9UHZCH1D8ZpenfMCr40TmzqRoO3bcuqupt3xFUgSPSXtoHAqD+LL53k1w==",
+        "shasum": "7452b20ef549e780ac970649649e00bfc24a6948",
+        "tarball": "http://my-private-registry:10000/@acme%2fcore/-/package-0.0.5-next.tgz"
+      },
+      "contributors": []
+    },
+    "0.0.6": {
+      "license": "ISC",
+      "scripts": {
+        "build": "ls -l && rm -fr dist && mkdir -p dist && cp package.json dist && cp avatar.png dist && cp README.md dist",
+        "bump": "npm version patch --no-git-tag-version && npm pack",
+        "bump:publish:latest": "npm version patch --no-git-tag-version && npm publish",
+        "bump:publish:next": "npm version patch --no-git-tag-version && npm publish --tag next"
+      },
+      "readmeFilename": "README.md",
+      "_integrity": "",
+      "keywords": [],
+      "description": "## What's up",
+      "_nodeVersion": "15.8.0",
+      "dist": {
+        "integrity": "sha512-oyKGq4kPrDe1ZI4IJVlw4ur4LBVI+DLQBkofyeE8jvsV6B1OXZMVDHa5RmQbLbNEDXtVNbBA6adepU3mBpJnCw==",
+        "shasum": "e8a39e9505a8abf572e77aaaf67f50d84b02414a",
+        "tarball": "http://my-private-registry:10000/@acme%2fcore/-/package-0.0.6-next.tgz"
+      },
+      "_id": "@acme/core@0.0.6",
+      "main": "index.js",
+      "name": "@acme/core",
+      "_from": "file:package-0.0.6-next.tgz",
+      "_npmVersion": "6.14.11",
+      "version": "0.0.6",
+      "_resolved": "",
+      "author": "",
+      "contributors": []
+    },
+    "0.0.7": {
+      "dist": {
+        "integrity": "sha512-AAA7BRIbEID2o8Q7E2rbux6YPFY9e7F5nAEH4K0+yoaOjRTon+I+kQu61ZNgzgvbu7SNmtYDYGOZJrz8Rd/rtw==",
+        "shasum": "1bef7cdf35dc0f7b5b77547b8238131eb24bf87a",
+        "tarball": "http://my-private-registry:10000/@acme%2fcore/-/acme_core-0.0.7.tgz"
+      },
+      "_id": "@acme/core@0.0.7",
+      "version": "0.0.7",
+      "readmeFilename": "README.md",
+      "description": "## What's up",
+      "license": "ISC",
+      "_from": "file:acme_core-0.0.7.tgz",
+      "scripts": {
+        "build": "ls -l && rm -fr dist && mkdir -p dist && cp package.json dist && cp avatar.png dist && cp README.md dist",
+        "bump": "npm version patch --no-git-tag-version && npm pack",
+        "bump:publish:latest": "npm version patch --no-git-tag-version && npm publish",
+        "bump:publish:next": "npm version patch --no-git-tag-version && npm publish --tag next"
+      },
+      "keywords": [],
+      "author": "",
+      "_integrity": "",
+      "_resolved": "",
+      "_nodeVersion": "15.8.0",
+      "_npmVersion": "6.14.11",
+      "name": "@acme/core",
+      "main": "index.js",
+      "contributors": []
+    }
+  },
+  "time": {
+    "modified": "2021-03-05T16:07:58.024Z",
+    "created": "2021-03-04T21:55:06.634Z",
+    "0.0.0": "2021-03-04T21:55:06.634Z",
+    "0.0.1": "2021-03-04T21:55:35.542Z",
+    "0.0.2": "2021-03-05T09:40:42.946Z",
+    "0.0.3": "2021-03-05T14:56:49.497Z",
+    "0.0.4": "2021-03-05T14:59:42.600Z",
+    "0.0.5": "2021-03-05T15:01:00.715Z",
+    "0.0.6": "2021-03-05T15:50:57.376Z",
+    "0.0.7": "2021-03-05T16:07:58.024Z"
+  },
+  "users": {},
+  "dist-tags": {
+    "latest": "0.0.7",
+    "next": "0.0.7"
+  },
+  "_rev": "35-d89956fd120c119c",
+  "_id": "@acme/core",
+  "readme": "",
+  "_attachments": {}
+}

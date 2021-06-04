@@ -1,0 +1,10 @@
+{
+  "source": {
+    "registry": "127.0.0.1:5000",
+    "package_name": "lodash",
+    "token": "aze"
+  },
+  "version": {
+    "version": "4.17.21"
+  }
+}

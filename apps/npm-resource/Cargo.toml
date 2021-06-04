@@ -1,0 +1,30 @@
+[package]
+name = "npm-resource"
+version = "0.0.0"
+authors = ["Ben MERTZ <ben.mertz.dev@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.38"
+base64 = "0.13.0"
+chrono = { version = "0.4.19", features = ["serde"] }
+env_logger = "0.8.3"
+flate2 = "1.0.20"
+ignore = "0.4.17"
+log = "0.4.14"
+regex = "1.4.3"
+reqwest =  { version = "0.11", default-features = false, features = ["json", "rustls-tls", "blocking" ] }
+rustls = "0.19.0"
+semver = {version= "0.11.0", features = ["serde"]}
+serde = {version = "1.0.123", features =["derive"]}
+serde_json = "1.0.62"
+sha1 = "0.6.0"
+sha2 = "0.9.3"
+tar = "0.4.33"
+tempfile = "3.2.0"
+tokio = { version = "1.2.0", features = ["full"] }
+
+[dev-dependencies]
+wiremock = "0.5.1"

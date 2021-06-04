@@ -1,0 +1,93 @@
+jobs:
+  - name: release-next
+    public: true
+    serial: true
+    plan:
+      - in_parallel:
+          - get: src
+          - get: version
+      - task: build-lib
+        config:
+          platform: linux
+          image_resource:
+            type: registry-image
+            source: { repository: node, tag: 15.10-alpine }
+          inputs: [{ name: src }]
+          outputs: [{ name: dist }]
+          run:
+            path: sh
+            args:
+              - -exc
+              - |
+                BASE=$PWD
+                cd src
+                npm run build
+                cp -r dist/* $BASE/dist
+      - put: release-next
+        params:
+          version: version/version
+          package: dist
+  - name: bump-version
+    public: true
+    serial: true
+    plan:
+      - in_parallel:
+          - get: version
+            trigger: true
+            passed: [release-next]
+      - put: version
+        params: { bump: patch }
+  - name: release-latest
+    public: true
+    serial: true
+    plan:
+      - get: version
+        passed: [release-next]
+      - put: release-latest
+        params:
+          version: version/version
+
+resource_types:
+  - name: npm-resource
+    type: registry-image
+    source:
+      repository: ((npm_resource.image))
+      tag: ((npm_resource.version))
+
+resources:
+  - name: release-latest
+    check_every: 1h
+    icon: truck-check
+    type: npm-resource
+    source:
+      registry: ((npm.registry))
+      package_name: ((app.lib_name))
+      token: ((npm.token))
+  - name: release-next
+    check_every: 1h
+    type: npm-resource
+    icon: truck
+    source:
+      registry: ((npm.registry))
+      package_name: ((app.lib_name))
+      token: ((npm.token))
+      tag: next
+  - name: version
+    check_every: 1h
+    type: semver
+    icon: tag
+    source:
+      driver: git
+      uri: ((app.repository))
+      branch: ((app.branch))
+      file: version
+      private_key: ((git.private_key))
+  - name: src
+    check_every: 1h
+    type: git
+    icon: source-branch
+    source:
+      uri: ((app.repository))
+      branch: ((app.branch))
+      private_key: ((git.private_key))
+      ignore_paths: [version]

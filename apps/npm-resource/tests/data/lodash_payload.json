@@ -1,0 +1,9 @@
+{
+  "source": {
+    "package_name": "lodash",
+    "tag": "latest"
+  },
+  "version": {
+    "version": "4.17.21"
+  }
+}

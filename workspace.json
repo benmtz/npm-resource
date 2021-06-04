@@ -1,0 +1,135 @@
+{
+  "version": 2,
+  "cli": {
+    "defaultCollection": "@nrwl/node"
+  },
+  "defaultProject": "npm-resource",
+  "projects": {
+    "npm-resource": {
+      "root": "apps/npm-resource",
+      "sourceRoot": "apps/npm-resource/src",
+      "projectType": "application",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": ["cargo check"],
+            "cwd": "apps/npm-resource"
+          }
+        },
+        "fmt": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": ["cargo fmt -v"],
+            "cwd": "apps/npm-resource"
+          }
+        },
+        "build": {
+          "executor": "@nrwl/workspace:run-commands",
+          "outputs": ["dist/apps/npm-resource"],
+          "options": {
+            "commands": [
+              "cargo build --target-dir ../../dist/apps/npm-resource"
+            ],
+            "cwd": "apps/npm-resource"
+          }
+        },
+        "build-image": {
+          "executor": "@nx-tools/nx-docker:build",
+          "options": {
+            "push": false,
+            "file": "apps/npm-resource/Dockerfile",
+            "tags": ["benmtz/npm-resource:latest"],
+            "platforms": ["linux/amd64"]
+          }
+        },
+        "build-image-test": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx build-image npm-resource",
+              "nx test-image npm-resource-e2e"
+            ],
+            "parallel": false
+          }
+        }
+      }
+    },
+    "npm-resource-e2e": {
+      "root": "apps/npm-resource-e2e",
+      "projectType": "application",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/npm-resource-e2e/**/*.ts"]
+          }
+        },
+        "fmt": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": ["nx format:write --project npm-resource-e2e"],
+            "parallel": true
+          }
+        },
+        "test": {
+          "executor": "./tools/executors/cucumber:echo",
+          "options": {
+            "featuresGlob": "apps/npm-resource-e2e/features/**/*.feature",
+            "stepsGlob": "apps/npm-resource-e2e/step-definitions/**/*.ts",
+            "publishQuiet": true,
+            "tsconfig": "apps/npm-resource-e2e/tsconfig.spec.json",
+            "failFast": true,
+            "extraWorldData": {
+              "type": "debug"
+            }
+          },
+          "configurations": {
+            "image": {
+              "extraWorldData": {
+                "type": "docker"
+              }
+            }
+          }
+        },
+        "test-image-standalone": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx start mockserver",
+              "wait-on http-get://localhost:1080/mockserver/dashboard && nx test --configuration=image npm-resource-e2e"
+            ],
+            "readyWhen": "Ran all test suites"
+          }
+        },
+        "test-standalone": {
+          "executor": "./tools/executors/run-when:echo",
+          "options": {
+            "target": "npm-resource-e2e:test",
+            "runAndWaitForTargets": [
+              {
+                "target": "mockserver:run",
+                "waitOnResource": "http-get://localhost:1080/mockserver/dashboard"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "mockserver": {
+      "root": "apps/npm-resource-e2e",
+      "sourceRoot": "apps/npm-resource-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "run": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "docker run --rm -p 1080:1080 mockserver/mockserver -logLevel WARN -serverPort 1080"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
